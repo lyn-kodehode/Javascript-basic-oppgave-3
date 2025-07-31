@@ -134,11 +134,9 @@ const diceRoller = (size, num = 6) => {
   }
   return diceRollerArray;
 };
-// diceRoller(4);
-// diceRoller(6);
-diceRoller(5, 20);
-console.log(diceRollerArray);
-
+// console.log(diceRoller(4));
+// console.log(diceRoller(6));
+console.log(diceRoller(5, 20));
 /******************************************************************************
 3.
 
@@ -192,8 +190,8 @@ const stringModifier = (words) => {
   }
   return newWords.join(" ");
 };
+// console.log(stringModifier(words));
 console.log(stringModifier(randomWords));
-console.log(stringModifier(words));
 
 /******************************************************************************
 4.
@@ -219,7 +217,6 @@ doubleSwap("what is the point of this?", "o", "t")
 skal returnere "whao is ohe ptino tf ohis?"
 
 ******************************************************************************/
-let newString;
 function doubleSwap(string, charA, charB) {
   string = string.split("");
   for (let i = 0; i < string.length; i++) {
@@ -322,6 +319,6 @@ const helloChecker = (greeting, array) => {
 
 console.log(helloChecker("kumusta", greetings));
 console.log(helloChecker("salut,", greetings));
-console.log(helloChecker("salut", greetings));
+console.log(helloChecker("sAlut", greetings));
 console.log(helloChecker("Hallo", greetings));
 console.log(helloChecker("hEllO", greetings));
