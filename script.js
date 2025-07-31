@@ -290,7 +290,7 @@ const helloChecker = (greeting, array) => {
       .toLowerCase();
     // console.log(array[i]);
     if (array[i].includes(greeting.toLowerCase())) {
-      switch (greeting) {
+      switch (greeting.toLowerCase()) {
         case "hello":
           language = "engelsk";
           break;
@@ -303,7 +303,7 @@ const helloChecker = (greeting, array) => {
         case "hallo":
           language = "tysk";
           break;
-        case "czesc":
+        case "cześć":
           language = "polsk";
           break;
         default:
@@ -322,3 +322,5 @@ console.log(helloChecker("salut,", greetings));
 console.log(helloChecker("sAlut", greetings));
 console.log(helloChecker("Hallo", greetings));
 console.log(helloChecker("hEllO", greetings));
+console.log(helloChecker("cześć", greetings));
+console.log(helloChecker("czesc", greetings));
