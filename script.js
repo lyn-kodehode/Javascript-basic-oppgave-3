@@ -281,25 +281,19 @@ const greetings = [
 // Skriv koden for oppgave 5 her
 let language = "";
 const helloChecker = (greeting, array) => {
+  greeting = greeting
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
   for (let i = 0; i < array.length; i++) {
     array[i] = array[i]
-      .replaceAll(".", "")
-      .replaceAll(",", "")
-      .replaceAll("!", "")
-      .replaceAll("?", "")
+      .replace(/[.,!?]/g, "")
       .normalize("NFD")
-      .replaceAll(/[\u0300-\u036f]/g, "")
+      .replace(/[\u0300-\u036f]/g, "")
       .toLowerCase();
     // console.log(array[i]);
-    if (
-      array[i].includes(
-        greeting
-          .normalize("NFD")
-          .replaceAll(/[\u0300-\u036f]/g, "")
-          .toLowerCase()
-      )
-    ) {
-      switch (greeting.toLowerCase()) {
+    if (array[i].includes(greeting)) {
+      switch (greeting) {
         case "hello":
           language = "engelsk";
           break;
@@ -326,10 +320,10 @@ const helloChecker = (greeting, array) => {
   return `Ingen ${greeting.toUpperCase()} oppdaget.`;
 };
 
-// console.log(helloChecker("kumusta", greetings));
-// console.log(helloChecker("salut,", greetings));
-// console.log(helloChecker("sAlut", greetings));
-// console.log(helloChecker("Hallo", greetings));
-// console.log(helloChecker("hEllO", greetings));
+console.log(helloChecker("kumusta", greetings));
+console.log(helloChecker("salut", greetings));
+console.log(helloChecker("sAlut", greetings));
+console.log(helloChecker("Hallo", greetings));
+console.log(helloChecker("hEllO", greetings));
 console.log(helloChecker("cześć", greetings));
 console.log(helloChecker("Czesc", greetings));
